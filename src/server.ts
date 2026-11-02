@@ -1,7 +1,5 @@
-import { buildApp } from './app.ts'
+import { app } from './app.ts'
 import { env } from './env.ts'
-
-const app = buildApp({ logger: true })
 
 async function shutdown() {
   await app.close()

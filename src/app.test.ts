@@ -1,9 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
-import { buildApp } from './app.ts'
+import { app } from './app.ts'
 
 describe('GET /health', () => {
-  const app = buildApp()
-
   beforeAll(() => app.ready())
   afterAll(() => app.close())
 

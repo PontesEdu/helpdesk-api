@@ -1,11 +1,10 @@
-import fastify, { type FastifyServerOptions } from 'fastify'
+import fastify from 'fastify'
+import { env } from './env.ts'
 
-export function buildApp(options: FastifyServerOptions = {}) {
-  const app = fastify(options)
+export const app = fastify({
+  logger: env.NODE_ENV !== 'test',
+})
 
-  app.get('/health', async () => {
-    return { status: 'ok' }
-  })
-
-  return app
-}
+app.get('/health', async () => {
+  return { status: 'ok' }
+})
