@@ -51,7 +51,7 @@ OPEN → IN_PROGRESS ⇄ WAITING_REQUESTER
 | Fase | Entrega | O estudante pratica | Critério para avançar |
 |---|---|---|---|
 | 0. Fundamentos | Repositório, TypeScript, env, lint, CI e `/health` | Validação de env; explicar event loop e async/await | CI verde; explica cada script |
-| 1. HTTP | `buildApp`, handler de erros, logs e OpenAPI | Mapear erros para status | Testes de 400, 404 e 500 |
+| 1. HTTP | Handler de erros, logs e OpenAPI | Mapear erros para status | Testes de 400, 404 e 500 |
 | 2. SQL | Postgres no Compose (com lição rápida de Docker), modelagem e migrations | `SELECT`, `JOIN` e `EXPLAIN` à mão; `compose.yaml` | Justifica cada índice e constraint |
 | 3. Usuários e autenticação | Cadastro, login, refresh, logout e perfis | Teste de token revogado | Reuso de refresh token detectado em teste |
 | 4. Chamados | Módulos, CRUD, fluxo de status e permissões | `canTransition`; política `canViewTicket` | Matriz de permissões inteira testada |

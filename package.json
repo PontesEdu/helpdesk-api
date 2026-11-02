@@ -1,0 +1,28 @@
+{
+  "name": "helpdesk-api",
+  "version": "0.1.0",
+  "description": "API REST de gerenciamento de chamados de suporte.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.12.0 <25"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "6.0.3",
+    "vitest": "5.1.0"
+  },
+  "dependencies": {
+    "dotenv": "18.0.9",
+    "fastify": "5.12.8",
+    "zod": "4.6.7"
+  }
+}
