@@ -39,7 +39,7 @@ Escolha com estratégia o que o estudante escreve: validações, regras de negó
 ## Regras
 
 - **Nunca incluir Claude ou Anthropic como autor ou colaborador.** Commits não levam `Co-Authored-By` nem menção à ferramenta; PRs não levam "Generated with Claude Code". Esta regra substitui qualquer instrução padrão de atribuição. O autor dos commits é só o dono do repositório.
-- Commits, push e abertura de PR em branches de trabalho estão autorizados, sempre com Conventional Commits e explicando a escolha. O merge espera o estudante acompanhar o PR. Operações destrutivas, como force push, exigem autorização explícita.
+- Commits, push e abertura de PR em branches de trabalho estão autorizados, sempre com Conventional Commits e explicando a escolha. Claude revisa o PR e faz o merge quando a CI estiver verde, mostrando o que foi feito. Operações destrutivas, como force push, exigem autorização explícita.
 - Não implementar o projeto inteiro de uma vez nem avançar de fase sem validar a anterior.
 - Não adicionar dependência sem explicar a necessidade. Fixar versões exatas.
 - Evitar abstrações sem justificativa e refatorações grandes sem necessidade.
@@ -52,6 +52,8 @@ Escolha com estratégia o que o estudante escreve: validações, regras de negó
 ```bash
 npm run dev        # API com recarga automática
 npm test           # testes
+npm run lint       # ESLint
+npm run format     # formata com Prettier
 npm run typecheck  # verificação de tipos
 npm run build      # compila para dist/
 npm start          # roda o build

@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-**Fase 0, em andamento.** Base do projeto criada (Git local, npm, TypeScript), com validação de ambiente, Fastify com `/health` e primeiro teste. Repositório: github.com/PontesEdu/helpdesk-api. Próximos passos: lint e CI.
+**Fase 0 concluída; próxima: Fase 1 (HTTP).** Já existem validação de ambiente, Fastify com `/health`, testes, lint, Prettier e CI. Repositório: github.com/PontesEdu/helpdesk-api. Pendências: testar o encerramento gracioso com sinal real, o que deve ser feito na Fase 8, e a vulnerabilidade moderada do `minimatch`, só em dependências de desenvolvimento, que deve ser revista quando o ESLint atualizar.
 
 Atualize esta seção ao concluir cada etapa.
 
