@@ -24,16 +24,16 @@ OPEN → IN_PROGRESS ⇄ WAITING_REQUESTER
 
 **Permissões:**
 
-| Ação | Solicitante | Agente | Admin |
-|---|---|---|---|
-| Abrir chamado | sim | sim | sim |
-| Ver chamados | só os próprios | todos | todos |
-| Assumir ou atribuir | não | assumir | atribuir a qualquer agente |
-| Alterar status | confirmar ou reabrir o próprio | conforme o fluxo | conforme o fluxo |
-| Definir prioridade | não | sim | sim |
-| Comentar | nos próprios | sim | sim |
-| Comentário interno | não cria nem vê | sim | sim |
-| Gerenciar usuários e categorias | não | não | sim |
+| Ação                            | Solicitante                    | Agente           | Admin                      |
+| ------------------------------- | ------------------------------ | ---------------- | -------------------------- |
+| Abrir chamado                   | sim                            | sim              | sim                        |
+| Ver chamados                    | só os próprios                 | todos            | todos                      |
+| Assumir ou atribuir             | não                            | assumir          | atribuir a qualquer agente |
+| Alterar status                  | confirmar ou reabrir o próprio | conforme o fluxo | conforme o fluxo           |
+| Definir prioridade              | não                            | sim              | sim                        |
+| Comentar                        | nos próprios                   | sim              | sim                        |
+| Comentário interno              | não cria nem vê                | sim              | sim                        |
+| Gerenciar usuários e categorias | não                            | não              | sim                        |
 
 **Regras:**
 
@@ -48,18 +48,18 @@ OPEN → IN_PROGRESS ⇄ WAITING_REQUESTER
 
 ## Roadmap
 
-| Fase | Entrega | O estudante pratica | Critério para avançar |
-|---|---|---|---|
-| 0. Fundamentos | Repositório, TypeScript, env, lint, CI e `/health` | Validação de env; explicar event loop e async/await | CI verde; explica cada script |
-| 1. HTTP | Handler de erros, logs e OpenAPI | Mapear erros para status | Testes de 400, 404 e 500 |
-| 2. SQL | Postgres no Compose (com lição rápida de Docker), modelagem e migrations | `SELECT`, `JOIN` e `EXPLAIN` à mão; `compose.yaml` | Justifica cada índice e constraint |
-| 3. Usuários e autenticação | Cadastro, login, refresh, logout e perfis | Teste de token revogado | Reuso de refresh token detectado em teste |
-| 4. Chamados | Módulos, CRUD, fluxo de status e permissões | `canTransition`; política `canViewTicket` | Matriz de permissões inteira testada |
-| 5. Interações | Comentários, histórico, transação e concorrência | Teste de dois agentes simultâneos | Nenhuma alteração sem evento |
-| 6. Consultas | Filtros, paginação e índices | Um filtro completo, com teste | `EXPLAIN` com volume realista |
-| 7. Segurança | Rate limit, Helmet, CORS e revisão OWASP | Revisar a API pelo OWASP | Checklist fechado |
-| 8. Produção | Dockerfile, deploy, secrets, migrations e observabilidade | Pipeline de deploy; simular rollback | API publicada e documentada |
-| 9. Avançado | Só com motivo real, como e-mail com fila | Decidir o que vale a pena | Justificativa escrita |
+| Fase                       | Entrega                                                                  | O estudante pratica                                 | Critério para avançar                     |
+| -------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------- | ----------------------------------------- |
+| 0. Fundamentos             | Repositório, TypeScript, env, lint, CI e `/health`                       | Validação de env; explicar event loop e async/await | CI verde; explica cada script             |
+| 1. HTTP                    | Handler de erros, logs e OpenAPI                                         | Mapear erros para status                            | Testes de 400, 404 e 500                  |
+| 2. SQL                     | Postgres no Compose (com lição rápida de Docker), modelagem e migrations | `SELECT`, `JOIN` e `EXPLAIN` à mão; `compose.yaml`  | Justifica cada índice e constraint        |
+| 3. Usuários e autenticação | Cadastro, login, refresh, logout e perfis                                | Teste de token revogado                             | Reuso de refresh token detectado em teste |
+| 4. Chamados                | Módulos, CRUD, fluxo de status e permissões                              | `canTransition`; política `canViewTicket`           | Matriz de permissões inteira testada      |
+| 5. Interações              | Comentários, histórico, transação e concorrência                         | Teste de dois agentes simultâneos                   | Nenhuma alteração sem evento              |
+| 6. Consultas               | Filtros, paginação e índices                                             | Um filtro completo, com teste                       | `EXPLAIN` com volume realista             |
+| 7. Segurança               | Rate limit, Helmet, CORS e revisão OWASP                                 | Revisar a API pelo OWASP                            | Checklist fechado                         |
+| 8. Produção                | Dockerfile, deploy, secrets, migrations e observabilidade                | Pipeline de deploy; simular rollback                | API publicada e documentada               |
+| 9. Avançado                | Só com motivo real, como e-mail com fila                                 | Decidir o que vale a pena                           | Justificativa escrita                     |
 
 Autenticação vem antes dos chamados porque as permissões dependem de saber quem é o usuário.
 
