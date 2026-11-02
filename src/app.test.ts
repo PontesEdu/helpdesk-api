@@ -17,4 +17,11 @@ describe('GET /health', () => {
 
     expect(response.statusCode).toBe(404)
   })
+
+  it('aparece na documentação OpenAPI', async () => {
+    const response = await app.inject({ method: 'GET', url: '/docs/json' })
+
+    expect(response.statusCode).toBe(200)
+    expect(response.json()).toHaveProperty(['paths', '/health'])
+  })
 })
