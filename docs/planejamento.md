@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-**Fases 0 e 1 concluídas; próxima: Fase 2 (SQL).** Já existem validação de ambiente, Fastify com `/health`, testes, lint, Prettier, CI, tratamento central de erros (RFC 9457), validação com Zod na rota e OpenAPI em `/docs`. Repositório público: github.com/PontesEdu/helpdesk-api, com `main` protegida pela CI. Rever na Fase 7: `/docs` aberto em produção e `redact` de logs quando houver autenticação. Pendências: testar o encerramento gracioso com sinal real, o que deve ser feito na Fase 8, e a vulnerabilidade moderada do `minimatch`, só em dependências de desenvolvimento, que deve ser revista quando o ESLint atualizar.
+**Fase 0 concluída; Fase 1 entregue e aguardando a validação do estudante. A Fase 2 (SQL) só começa depois dela.** Já existem validação de ambiente, Fastify com `/health`, testes, lint, Prettier, CI, tratamento central de erros (ADR 0010), validação com Zod na rota e OpenAPI em `/docs`. Repositório público: github.com/PontesEdu/helpdesk-api, com `main` protegida pela CI. Rever na Fase 7: `/docs` aberto em produção e `redact` de logs quando houver autenticação. Pendências: testar o encerramento gracioso com sinal real, o que deve ser feito na Fase 8, e a vulnerabilidade moderada do `minimatch`, só em dependências de desenvolvimento, que deve ser revista quando o ESLint atualizar.
 
 Atualize esta seção ao concluir cada etapa.
 

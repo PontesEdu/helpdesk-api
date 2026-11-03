@@ -9,12 +9,12 @@ export const healthRoutes: FastifyPluginAsyncZod = async (app) => {
         summary: 'Verifica se a API está no ar',
         tags: ['health'],
         response: {
-          200: z.object({ status: z.literal('ok') }),
+          200: z.object({ status: z.string() }),
         },
       },
     },
     async () => {
-      return { status: 'ok' as const }
+      return { status: 'ok' }
     },
   )
 }
