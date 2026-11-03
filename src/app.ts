@@ -5,10 +5,10 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from '@fastify/type-provider-zod'
-import fastify from 'fastify'
+import fastify, { type FastifyError } from 'fastify'
 import { env } from './env.ts'
 import { healthRoutes } from './modules/health/health.routes.ts'
-import { errorHandler, notFoundHandler } from './shared/error-handler.ts'
+import { AppError } from './shared/errors.ts'
 
 export const app = fastify({
   logger: env.NODE_ENV !== 'test',
@@ -17,8 +17,21 @@ export const app = fastify({
 app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
 
-app.setErrorHandler(errorHandler)
-app.setNotFoundHandler(notFoundHandler)
+app.setErrorHandler((error: FastifyError, request, reply) => {
+  // Erro que nós lançamos de propósito.
+  if (error instanceof AppError) {
+    return reply.status(error.statusCode).send({ message: error.message })
+  }
+
+  // Erro do cliente, como validação ou JSON malformado.
+  if (error.statusCode && error.statusCode < 500) {
+    return reply.status(error.statusCode).send({ message: error.message })
+  }
+
+  // Sobrou um bug nosso: registra tudo no log e não mostra detalhes ao cliente.
+  request.log.error(error)
+  return reply.status(500).send({ message: 'Erro interno do servidor.' })
+})
 
 // O Swagger precisa vir antes das rotas para conseguir enxergá-las.
 app.register(fastifySwagger, {

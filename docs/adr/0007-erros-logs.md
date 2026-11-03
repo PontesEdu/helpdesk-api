@@ -1,6 +1,6 @@
 # 0007. RFC 9457 e logs com Pino
 
-**Status:** aceita.
+**Status:** substituída pela [0010](0010-erros-simples.md).
 
 **Contexto:** por padrão, o Fastify devolve `error.message` em qualquer status, o que pode vazar texto do banco em um 500. O RFC 9457 é um padrão IETF, mas o próprio texto aceita formatos próprios, e sua adoção não foi medida; é uma escolha deste projeto.
 
